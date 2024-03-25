@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Pointer\포인터 기초.cpp">
+    <ClCompile Include="Pointer\Call_by.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
