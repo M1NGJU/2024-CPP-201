@@ -6,9 +6,8 @@ int main(void) {
 
 	//4바이트 차이(x86으로 설정하면 더욱 좋음)
 	printf("%d %d\n", &arr[0], &arr[1]);
-
-	//1바이트 차이
-	printf("%d %d\n", &str[0], &str[1]);
+	//위의 코드와 결과가 같다.
+	printf("%d %d\n", arr, arr+1);
 
 	return 0;
 
