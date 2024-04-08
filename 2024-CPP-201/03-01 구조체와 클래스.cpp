@@ -2,8 +2,8 @@
 #include<string>
 using namespace std;
 
-//구조체는 디폴트가 public
-struct Student {
+// 클래스는 디폴트가 private
+ Student {
 	int hakbun_;
 	string name_;
 
