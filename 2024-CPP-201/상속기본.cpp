@@ -5,7 +5,15 @@ using namespace std;
 class Person {
 public:
 	Person(string name, int age)
-		: name_(name), age_(age) {}
+		: name_(name), age_(age) 
+	{
+		cout << "부모생성자 호출" << endl;
+	}
+
+	~Person() 
+	{
+		cout << "부모소멸자 호출" << endl;
+	}
 
 	void show_person() {
 		cout << name_ << "의 나이는 " << age_ << "입니다" << endl;
@@ -21,9 +29,12 @@ public:
 	// 부모(기본)클래스의 생성자가 먼저 호출되어야 한다
 	Student(int id, string name, int age) : Person(name, age), id_(id)
 	{
-
+		cout << "자식 생성자 호출" << endl;
 	}
-
+	~Student()
+	{
+		cout << "자식 소멸자 호출" << endl;
+	}
 	void show_person(void) {
 		cout << "학번" << id_ << endl;
 		Person::show_person();
