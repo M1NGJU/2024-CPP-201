@@ -4,8 +4,8 @@
 // Ball 클래스 정의
 class Ball {
 public:
-    sf::CircleShape shape;
-    sf::Vector2f velocity;
+    sf::CircleShape shape;  //공의 외형
+    sf::Vector2f velocity;  // 공의 속도
 
     Ball(float mX, float mY) {
         shape.setPosition(mX, mY);
@@ -16,13 +16,18 @@ public:
     }
 
     void update() {
+        // 공을 움직이게 함.
         shape.move(velocity);
 
-        if (left() < 0) velocity.x = 8.f;
-        else if (right() > 800) velocity.x = -8.f;
+        if (left() < 0) 
+            velocity.x = 8.f;
+        else if (right() > 800) 
+            velocity.x = -8.f;
 
-        if (top() < 0) velocity.y = 8.f;
-        else if (bottom() > 600) velocity.y = -8.f;
+        if (top() < 0) 
+            velocity.y = 8.f;
+        else if (bottom() > 600) 
+            velocity.y = -8.f;
     }
 
     float left() { return shape.getPosition().x - shape.getRadius(); }
@@ -84,7 +89,7 @@ const float brickHeight = 20.f;
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Brick Breaker");
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(60);   //1초에 60 프레임으로 제한.
 
     Ball ball(windowWidth / 2, windowHeight / 2);
     Paddle paddle(windowWidth / 2, windowHeight - 50);
@@ -102,7 +107,7 @@ int main() {
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
+        //update
         ball.update();
         paddle.update();
 
@@ -117,6 +122,8 @@ int main() {
                 brick.destroyed = true;
             }
         }
+
+        //draw
 
         window.clear();
         window.draw(ball.shape);
