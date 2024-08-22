@@ -5,10 +5,6 @@ using namespace std;
 
 class Animal {
 public:      // 멤버 함수
-    Animal() {
-
-    }
-
     Animal(string name, unsigned int age)
         : name_(name), age_(age)
     {
@@ -16,15 +12,15 @@ public:      // 멤버 함수
         cout << "나이 " << age_ << endl;
     }
 
-    void bark() {
+    virtual void bark() {
         cout << "잘 짖는다." << endl;
     }
 
-    void sleep() {
+    virtual void sleep() {
         cout << "잘 잔다." << endl;
     }
 
-    void eat() {
+    virtual void eat() {
         cout << "잘 먹는다." << endl;
     }
 
@@ -42,7 +38,8 @@ public:
     {
         cout << "인권존재여부 " << right_ << endl;
     }
-
+    // TODO : 정적 바인딩을 동적바인딩으로 고치기
+    // 동적바인딩을 해야함.
     void bark() {
         cout << "톡톡" << endl;
     }
@@ -66,7 +63,8 @@ void main(void)
     ani->sleep();
     ani->eat();
 
-    Human* hum = new Human("지우맨", 18, true);      // 동적할당
+    // ani의 자료형은 Animal*
+    Human* hum = new Human("지우맨", 18, true);   
     hum->bark();
     hum->sleep();
     hum->eat();
