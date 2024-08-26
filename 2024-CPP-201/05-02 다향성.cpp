@@ -40,15 +40,15 @@ public:
     }
     // TODO : 정적 바인딩을 동적바인딩으로 고치기
     // 동적바인딩을 해야함.
-    void bark() {
+    void bark() override {
         cout << "톡톡" << endl;
     }
 
-    void sleep() {
+    void sleep() override {
         cout << "쿨쿨" << endl;
     }
 
-    void eat() {
+    void eat() override {
         cout << "냠냠" << endl;
     }
 
