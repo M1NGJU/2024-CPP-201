@@ -5,6 +5,7 @@
 using namespace std;
 
 class Clothes {
+
 public:
     Clothes(string name, int price, int making_time, int beauty)
         : name_(name), price_(price), making_time_(making_time), beauty_(beauty)
@@ -25,13 +26,16 @@ public:
     int price_;
     int making_time_;
     int beauty_;
+
 };
 
 class Hanbok : public Clothes {
 public:
     Hanbok(string name, int price, int making_time, int beauty, int norigae, int jugori)
         : Clothes(name, price, making_time, beauty), norigae_(norigae), jugori_(jugori)
-    {}
+    {
+        attck_count_ = 0;
+    }
 
     void attack(Clothes* target) {
         target->beauty_ -= beauty_;
@@ -42,7 +46,20 @@ public:
         cout << "노리개 : " << norigae_ << endl;
         cout << "저고리 : " << jugori_ << endl;
     }
+
+    void attack(Clothes* target) {
+
+        attck_count_++;
+        if (attck_count_ % 3 == 0) {   // 프리티컬 공격: 매 3번째 공격에 특수 효과 적용
+            target->beauty_ -= beauty_ * 2;  // 예: 데미지 2배
+        }
+        else {
+            target->beauty_ -= beauty_;
+        }
+    }
+
 public:
+    int attck_count_;   // 공격횟수
     int norigae_;        // 노리개
     int jugori_;        // 저고리
 };
@@ -72,7 +89,7 @@ public:
         Clothes::show();
         cout << "자수 : " << embroidery_ << endl;
     }
-    void attack(Clothes* target) {
+    void attack(Clothes* target) override {
         target->beauty_ -= beauty_;
     }
 public:
@@ -119,6 +136,8 @@ int main(void) {
             }
 
     }
+
+    
 
     
 
