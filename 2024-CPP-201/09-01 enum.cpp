@@ -10,16 +10,16 @@ enum FoodStyle {
 
 void main(void) {
 	// 0:한식, 1:일식 2:중식
-	int style = Korean;  // Korean은 0
+	int style = FoodStyle::Korean;  // Korean은 0
 
 	switch (style) {
-	case Korean:
+	case FoodStyle::Korean:
 		cout << "한식" << endl;
 		break;
-	case Japanese:
+	case FoodStyle::Japanese:
 		cout << "일식" << endl;
 		break;
-	case Chinese:
+	case FoodStyle::Chinese:
 		cout << "중식" << endl;
 		break;
 	}
