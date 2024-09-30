@@ -10,7 +10,7 @@ enum FoodStyle {
 
 void main(void) {
 	// 0:한식, 1:일식 2:중식
-	int style = FoodStyle::Korean;  // Korean은 0
+	FoodStyle style = FoodStyle::Korean;  // Korean은 0
 
 	switch (style) {
 	case FoodStyle::Korean:
