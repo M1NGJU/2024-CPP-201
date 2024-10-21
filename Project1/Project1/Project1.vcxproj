@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="..\..\2024-CPP-201\main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\2024-CPP-201\gulim.ttc" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

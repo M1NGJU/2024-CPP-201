@@ -17,6 +17,17 @@ void main(void) {
     player.setPosition((App::WIDTH - player.getSize().x) / 2, (App::HEIGHT - player.getSize().y) / 2);
     player.setFillColor(Color::Magenta);
 
+    Font font;
+    font.loadFromFile("gulim.ttc");
+
+    Text text;
+    text.setFont(font);
+    text.setCharacterSize(50);
+    text.setString("nanparan");
+    text.setFillColor(Color::Blue);
+    text.setPosition(App::WIDTH-text.getGlobalBounds().width-8, 0.f);
+
+
     while (window.isOpen())
     {
         Event event;
@@ -36,6 +47,7 @@ void main(void) {
 
         window.clear(Color::White);
         window.draw(player);
+        window.draw(text);
         window.display();
     }
 };
