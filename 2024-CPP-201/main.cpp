@@ -10,6 +10,7 @@ enum App {
 
 void main(void) {
     RenderWindow window(VideoMode(App::WIDTH, App::HEIGHT), "Project");
+    window.setFramerateLimit(60);   //초당 프레임 조절(컴퓨터 성능과 상관없이 일정한 속도)
 
     RectangleShape player;
     player.setSize(Vector2f(200.f, 200.f));
