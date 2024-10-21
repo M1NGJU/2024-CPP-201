@@ -23,7 +23,7 @@ void main(void) {
     Text text;
     text.setFont(font);
     text.setCharacterSize(50);
-    text.setString("nanparan");
+    text.setString(L"난파란");
     text.setFillColor(Color::Blue);
     text.setPosition(App::WIDTH-text.getGlobalBounds().width-8, 0.f);
 
